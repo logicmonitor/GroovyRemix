@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <meta charset=utf-8>
+    <title>Groovy Remix : V2 -> V4</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f6;
+        }
+        #input {
+            border: 10px solid #0066ff;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px;
+            height: calc(100vh - 60px);
+        }
+        #output {
+            border: 10px solid #81ae49;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px;
+            height: calc(100vh - 60px);
+        }
+    </style>
+    <script type="module">
+        import * as GroovyRemix from "../js/LMGroovyRemix.mjs";
+        
+        const input = document.getElementById("input");
+        const output = document.getElementById("output");
+
+        function InputToOutput() {
+            output.value = input.value ? GroovyRemix.V2toV4(input.value) : input.value;
+        };
+
+        /*document.getElementById("button").onclick = function(e) {
+            fetch("./groovy/example.groovy")
+                .then(response => response.text())
+                .then((data) => {
+                    input.value = data;
+                    InputToOutput();
+                })
+        };*/
+
+        input.oninput = function(e) {
+            InputToOutput();
+        };
+    </script>
+    <body style="display: flex; flex-direction: row; width: 100%;">
+        <textarea id="input" rows="25" cols="100" placeholder="V2 Script" spellcheck="false"></textarea>
+        <textarea id="output" rows="25" cols="100" placeholder="V4 Script" readonly></textarea>
+        <!--button id="button">Load Example Script</button-->
+    </body>
+</html>

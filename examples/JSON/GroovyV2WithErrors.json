@@ -1,0 +1,57 @@
+{
+  "collectionMethod": "script",
+  "datapoints": [
+    {
+      "originId": "2736Z1oPQ7-wcKcVa72onQ",
+      "useValue": "responseTime",
+      "min": "",
+      "max": "",
+      "triggerInterval": 0,
+      "dataType": 4,
+      "name": "ExecutionTime",
+      "maxDigits": 4,
+      "interpretMethod": "none",
+      "noData": "Do not trigger an alert",
+      "type": "gauge",
+      "clearInterval": 0
+    }
+  ],
+  "searchKeywords": "",
+  "displayedAs": "GroovyV2WithErrors",
+  "description": "",
+  "appliesTo": "system.categories == \"test\"",
+  "collectionAttrs": {
+    "type": "groovy",
+    "content": "import com.logicmonitor.common.sse.utils.GroovyScriptHelper as GSH\nimport com.logicmonitor.mod.Snippets\n\ndef loader = GSH.getInstance()._getScript(\"Snippets\", Snippets.getLoader())\ndef remote = loader.load(\"lm.remote\").create(hostProps)\n\ndef str = remote.exec(\"show config -xml\")\n\ndef array = []\narray.push(\"test\")\narray.pop()\n\ndef xml = new XmlSlurper().parseText(str)\n\nprint xml.config\n\nreturn 0"
+  },
+  "type": 0,
+  "technicalNotes": "",
+  "useWildValueAsUniqueIdentifier": false,
+  "version": 1738841674,
+  "registryMetadata": {
+    "currentUuid": "nfvD5AScS5C6R4USIAkwfQ",
+    "originalUuid": "nfvD5AScS5C6R4USIAkwfQ",
+    "locatorId": "",
+    "authorCompanyUuid": "5edaa0a5-0287-11e6-8f05-0a4b2dd5f5d3",
+    "registryVersion": "1.0.0",
+    "checksum": "444d279586afe5117c8b3a4e436e2c44",
+    "namespace": "",
+    "registryId": ""
+  },
+  "multiInstance": false,
+  "name": "GroovyV2WithErrors",
+  "collectionInterval": "1m",
+  "dataSourceType": 1,
+  "group": "",
+  "headers": {
+    "cache-control": "no-cache, no-store",
+    "content-disposition": "attachment; filename=\"GroovyV2WithErrors.json\"",
+    "content-length": "1347",
+    "content-type": "application/json",
+    "date": "Thu, 06 Feb 2025 11:39:50 GMT",
+    "server": "LM",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "x-content-type-options": "nosniff",
+    "x-server-version": "217-6"
+  }
+}
