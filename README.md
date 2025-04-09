@@ -10,7 +10,7 @@ It works by running a series of patches on the script. Each patch does the follo
 * Replace the matches with the updated solution.
 
 ## Utilizing Groovy Remix
-### Clone the repository
+### Clone the Tepository
 Clone the GroovyMix repository somewhere you will be able to locate and use it. 
 ### Download DataSources
 DataSources can be downloaded as a json file using the LogicMonitor UI. Navigate to **My Module Toolbox** &#8594; Select the module for testing &#8594; **Export**.
@@ -41,7 +41,7 @@ Node's [http-server](https://www.npmjs.com/package/http-server) is a quick way t
 Utilizing the LogicMonitor UI, navigate to **My Module Toolbox** &#8594; **Add** &#8594; **Import from file**. Select the updated .json file and review the changes before saving.
 
 ## Disclaimer
-This tool is to be used alongside testing modules, it is designed to resolve issues that have been identified as known issues while transitioning from Groovy 2 to Groovy 4. Please ensure you test modules after using this tool, for more details on testing check out [Custom Module Validation](https://www.logicmonitor.com/support/custom-module-groovy-migration-validation)
+This tool is to be used alongside testing modules, it is designed to resolve issues that have been identified as known issues while transitioning from Groovy 2 to Groovy 4. Please ensure you test modules after using this tool, for more details on testing check out [Custom Module Validation](https://www.logicmonitor.com/support/custom-module-groovy-migration-validation).
 
 ## Improvements
 For any issues or security vulnerabilities you want to report, please add them to the Issues section for the maintainers of this project to review.
