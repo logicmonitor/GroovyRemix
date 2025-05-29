@@ -10,7 +10,7 @@ It works by running a series of patches on the script. Each patch does the follo
 * Replace the matches with the updated solution.
 
 ## Utilizing Groovy Remix
-### Clone the Tepository
+### Clone the Repository
 Clone the GroovyMix repository somewhere you will be able to locate and use it. 
 ### Download DataSources
 DataSources can be downloaded as a json file using the LogicMonitor UI. Navigate to **My Module Toolbox** &#8594; Select the module for testing &#8594; **Export**.
