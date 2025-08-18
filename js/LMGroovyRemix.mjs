@@ -27,7 +27,7 @@ let patches = [new Patch("V2 Header"                   , /^\/\/!\/lib-groovy\/v2
                new Patch("Array Push Comaptibility"    , /\.push\s*\(/s                                                                , /\.push\s*\(/g                                              , ".add("),
                new Patch("Array Pop Comaptibility"     , /\.pop\s*\(/s                                                                 , /([\w.()\[\]]+).pop\s*\(\)/g                                , "$1.remove($1.size() - 1)"),
                
-               new Patch("V2 Snippet Location"         , /com\.logicmonitor\.common\.sse\.utils\.GroovyScriptHelper/s                  , /com\.logicmonitor\.common\.sse\.utils\.GroovyScriptHelper/s, "import com.santaba.agent.groovy.utils.GroovyScriptHelper"),
+               new Patch("V2 Snippet Location"         , /com\.logicmonitor\.common\.sse\.utils\.GroovyScriptHelper/s                  , /com\.logicmonitor\.common\.sse\.utils\.GroovyScriptHelper/s, "com.santaba.agent.groovy.utils.GroovyScriptHelper"),
                new Patch("V2 Snippets"                 , /^.*\.getInstance\s*\(\)\._getScript\s*\("Snippets"/s                         , /\.getInstance\s*\(\)\._getScript\s*\("Snippets"/g          , ".getInstance(GroovySystem.version).getScript(\"Snippets\"")];
 
 export function V2toV4(str) {
@@ -47,4 +47,5 @@ export function V2toV4(str) {
 
 export function getPatches() {
     return patches;
+
 }
